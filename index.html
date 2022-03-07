@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="addBookMenu">
+        <span class="addBookCloseBtn">x</span>
+        <div class="addBookForm">
+            <form action="#" onsubmit="return false;">
+                <label for="title">Title
+                    <input type="text" id="title" required>
+                </label>
+                <label for="author">Author
+                    <input type="text" id="author" required>
+                </label>
+                <label for="pages">Pages
+                    <input type="number" id="pages" required>
+                </label>
+                <input type="submit" id="submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="flexContainer">
+        <div id="burger">
+            <span id="addBookBtn">+</span>
+        </div>
+        <div id='container'>
+        </div>
+        <footer></footer>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
