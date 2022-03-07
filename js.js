@@ -26,19 +26,18 @@ let getInput = () => {
     let pages = parseInt(document.getElementById('pages').value);
     let book = new Book(title, author, pages);
     myLibrary.push(book);
+    addBook(book);
     console.log(myLibrary);
 }
 
-let displayBooks = () => {
-    myLibrary.forEach(book => {
-        let _closeBtn = document.createElement('span');
+let addBook = (book) => {
+    let _closeBtn = document.createElement('span');
         _closeBtn.setAttribute('class', 'itemCloseBtn');
         _closeBtn.textContent = "x";
         _closeBtn.addEventListener('click', event=> {
             event.target.parentNode.remove();
             removeFromLibrary(event.target.parentNode.getAttribute('data-id'));
         })
-
         let _title = document.createElement('div');
         _title.setAttribute('class', 'itemTitle');
         _title.append(book.title);
@@ -46,11 +45,7 @@ let displayBooks = () => {
         let _author = document.createElement('div');
         _author.setAttribute('class', 'itemAuthor');
         _author.append(book.author);
-    
-        // let _pages = document.createElement('div');
-        // _pages.setAttribute('class', 'itemPages');
-        // _pages.append(book.pages);
-    
+        
         let item = document.createElement('div');
         item.setAttribute('class', 'item');
         item.setAttribute('data-id', book.title+book.author+book.pages);
@@ -69,15 +64,20 @@ let displayBooks = () => {
     
         let container = document.getElementById('container');
         container.append(item);
-    })
+}
+
+let displayBooks = () => {
+    myLibrary.forEach(book => {
+        addBook(book);
+        })
 }
 
 let itemColor = (book) => {
     if (book.read == true) {
-        return 'green';
+        return '#24d79e';
     }
     else {
-        return 'red';
+        return '#fcc72e';
     }
 }
 
@@ -122,26 +122,3 @@ document.querySelector('.addBookCloseBtn').addEventListener('click', closeForm);
 window.onload = displayBooks();
 
 console.log(myLibrary);
-
-
-/* Prototype inheritance
-
-function Student() {
-}
-
-Student.prototype.sayName = function() {
-  console.log(this.name)
-}
-
-function EighthGrader(name) {
-  this.name = name
-  this.grade = 8
-}
-
-EighthGrader.prototype = Object.create(Student.prototype)
-
-const carl = new EighthGrader("carl")
-carl.sayName() // console.logs "carl"
-carl.grade // 8
-
-*/
