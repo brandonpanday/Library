@@ -24,7 +24,11 @@ let getInput = () => {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = parseInt(document.getElementById('pages').value);
-    let book = new Book(title, author, pages);
+    let isRead = document.getElementById('read');
+    if (isRead.checked) read = true;
+    else read = false;
+    console.log(read);
+    let book = new Book(title, author, pages, read);
     myLibrary.push(book);
     addBook(book);
     console.log(myLibrary);
@@ -63,13 +67,13 @@ let addBook = (book) => {
         item.append(_closeBtn, _title, _author);
     
         let container = document.getElementById('container');
-        container.append(item);
+        container.prepend(item);
 }
 
 let displayBooks = () => {
     myLibrary.forEach(book => {
         addBook(book);
-        })
+    })
 }
 
 let itemColor = (book) => {

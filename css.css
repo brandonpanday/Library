@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: #F2F2F2;
 }
 /* Sliding menu */
 .addBookMenu {
@@ -14,6 +15,9 @@ html, body {
     padding: 0 .25em;
     font-family: 'Helvetica Neue', sans-serif;
     cursor: pointer;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 .addBookForm {
     width: 100vw;
@@ -27,7 +31,7 @@ html, body {
     margin: 0 auto;
     height: 100%;
     max-width: 768px;
-    width: 320px;
+        width: 320px;
 }
 
 .addBookForm label {
@@ -36,11 +40,15 @@ html, body {
     text-align: right;
     margin: 0.5em;
     padding: 0.5em 0;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 1px;
 }
 
 #submit {
     width: 240px;
     align-self: center;
+    margin: 0.5em 0;
 }
 
 /* burger menu */
@@ -48,7 +56,7 @@ html, body {
     width: 100vw;
     height: 60px;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
 }
 #burger span {
     margin: 0;
@@ -56,6 +64,9 @@ html, body {
     font-size: 3em;
     font-family: 'Helvetica Neue', sans-serif;
     cursor: pointer;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 
 .item {
@@ -67,21 +78,33 @@ html, body {
     background-color: grey;
     margin: 0 auto;
     cursor: pointer;
+	filter: drop-shadow(0.2rem 0.4rem 0.4rem rgba(0, 0, 30, 0.5));
 }
 .itemCloseBtn {
     align-self: flex-end;
     font-size: 2em;
-    padding: 0.5em 0.5em 0 0;
+    padding: 0.25em 0.5em 0 0;
     font-family: 'Helvetica Neue', sans-serif;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 .itemTitle {
     font-size: 2.5em;
     padding: 1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 .itemAuthor {
     font-size: 1.5em;
     text-align: right;
     padding: 1em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    -webkit-user-select: none; /* Chrome/Safari */ 
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 }
 .itemPages {
     font-size: 2em;
@@ -102,4 +125,3 @@ footer {
     width: 100vw;
     height: 60px;
 }
-
